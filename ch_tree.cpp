@@ -25,15 +25,22 @@ using namespace std;
 
 int main()
 {
+	/*
 	rlutil::setColor(2); // 2 for Green
 
 	std::cout << "Hello! I am green!" << std::endl;
 
 	rlutil::setColor(1);
 	std::cout<<"The Phenomenal RNB\n";
-
+	*/
 	int i,j;
-	setColor(2);
+	srand(time(NULL));
+	int x=random()%2;
+	if(x==1) {
+		setColor(6);
+	} else {
+		setColor(2);
+	}
 	int base=15; // min space at the end of the tree
 	// printing the top portion
 	int top=15+45;
@@ -170,5 +177,9 @@ int main()
 		cout<<'*';
 	}
 	cout<<'\n';
+	for(i=1;i<=55;i++) {
+		cout<<' ';
+	}
+	cout<<"ThePhenomenalRNB\n";
 	return 0;
 }
