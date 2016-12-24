@@ -23,6 +23,33 @@
 using namespace rlutil;
 using namespace std;
 
+int rnd()
+{
+	int num=5;
+	time_t sec;
+	sec=time(NULL);
+	//printf("Enter The Number\n");
+	if(num>0)
+	{
+		for(;;)
+		{
+			sec=sec%3600;
+			if(num>=sec)
+			{
+				return sec;
+				//printf("%ld\n",sec);
+				break;
+			}
+			sec=sec%num;
+		}
+	}
+	else
+	{
+		//printf("Please Enter Positive Value\n\n\n*****Thanks For Visit*****\n\n\n");
+	}
+	return 0;
+}
+
 int main()
 {
 	/*
@@ -34,7 +61,8 @@ int main()
 	std::cout<<"The Phenomenal RNB\n";
 	*/
 	int i,j;
-	srand(time(NULL));
+	int y=rnd();
+	//srand(time(NULL));
 	int x=random()%2;
 	if(x==1) {
 		setColor(6);
@@ -49,7 +77,7 @@ int main()
 	cout<<"*\n";
 	// first layer
 	int layer2=top-12;
-       	srand(time(NULL));	
+       	//srand(time(NULL));	
 	// max reach of layer2 from
 	// top left most part = top-12
 	int st=11;
@@ -65,7 +93,12 @@ int main()
 		for(j=1;j<=(2*(i+1))-1;j++) {
 			int x=rand()%10;
 			if(x>8) {
-				setColor(RED);
+				//int y=rnd();
+				if(y%2) {
+					setColor(RED);
+				} else {
+					setColor(11);
+				}
 				cout<<'*';
 			} else {
 				setColor(GREEN);
@@ -76,7 +109,7 @@ int main()
 	}
 	// second layer
 	st=9;
-       	srand(time(NULL));	
+       	//srand(time(NULL));	
 	int layer3=layer2-3;
 	int k;
 	for(i=1;i<=10;i++) {
@@ -92,7 +125,12 @@ int main()
 		for(j=1;j<=(2*(k+1))-1;j++) {
 			int x=rand()%10;
 			if(x>8) {
-				setColor(RED);
+				//int y=rnd();
+				if(y&1) {
+					setColor(RED);
+				} else {
+					setColor(11);
+				}
 				cout<<'*';
 			} else {
 				setColor(GREEN);
@@ -103,7 +141,7 @@ int main()
 	}
 	// third layer
 	st=5;
-       	srand(time(NULL));	
+       	//srand(time(NULL));	
 	int layer4=layer3-5;
 	int l=29;
 	int m=0;
@@ -120,7 +158,13 @@ int main()
 		for(j=1;j<=l+m;j++) {
 			int x=rand()%10;
 			if(x>8) {
-				setColor(RED);
+				//int y=rnd();
+				if(y&1) {
+					setColor(RED);
+				} else {
+					setColor(11);
+				}
+				//setColor(RED);
 				cout<<'*';
 			} else {
 				setColor(GREEN);
@@ -132,7 +176,7 @@ int main()
 	}
 	// fourth layer
 	st=4;
-       	srand(time(NULL));	
+       	//srand(time(NULL));	
 	int layer5=layer4-4;
 	l=37;
 	m=0;
@@ -149,7 +193,12 @@ int main()
 		for(j=1;j<=l+m;j++) {
 			int x=rand()%10;
 			if(x>8) {
-				setColor(RED);
+				if(y&1) {
+					setColor(RED);
+				} else {
+					setColor(11);
+				}
+				//setColor(RED);
 				cout<<'*';
 			} else {
 				setColor(GREEN);
